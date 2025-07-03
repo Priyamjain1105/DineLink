@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{{ url_for('submit_offline_order') }}" method="POST" onsubmit="return prepareOfflineOrderData()">
+    <input type="number" name="table_no" placeholder="Table Number" required><br>
+
+    <h4>Food Items:</h4>
+    <div id="offline-food-items-container">
+        <select onchange="updateOfflineTotal()" required>
+            <option value="">--Select Item--</option>
+            <option value="Pizza-300">Pizza - ₹300</option>
+            <option value="Burger-150">Burger - ₹150</option>
+            <option value="Pasta-200">Pasta - ₹200</option>
+            <option value="Sandwich-120">Sandwich - ₹120</option>
+            <option value="Salad-100">Salad - ₹100</option>
+        </select><br>
+    </div>
+    <button type="button" onclick="addOfflineFoodItem()">Add Another Item</button><br><br>
+
+    <h4>Total Cost: ₹<span id="offline-total-cost">0</span></h4>
+    <input type="hidden" name="food_order_data" id="offline_food_order_data">
+    <input type="hidden" name="total_cost" id="offline_total_cost_hidden">
+
+    <input type="submit" value="Place Order">
+</form>
+
+<script>
+    function addOfflineFoodItem() {
+        var container = document.getElementById('offline-food-items-container');
+        var newSelect = document.createElement('select');
+        newSelect.required = true;
+        newSelect.setAttribute("onchange", "updateOfflineTotal()");
+        newSelect.innerHTML = `
+            <option value="">--Select Item--</option>
+            <option value="Pizza-300">Pizza - ₹300</option>
+            <option value="Burger-150">Burger - ₹150</option>
+            <option value="Pasta-200">Pasta - ₹200</option>
+            <option value="Sandwich-120">Sandwich - ₹120</option>
+            <option value="Salad-100">Salad - ₹100</option>
+        `;
+        container.appendChild(newSelect);
+        container.appendChild(document.createElement('br'));
+    }
+
+    function updateOfflineTotal() {
+        var selects = document.querySelectorAll('#offline-food-items-container select');
+        var total = 0;
+        for (var i = 0; i < selects.length; i++) {
+            var val = selects[i].value;
+            if (val) {
+                var price = parseInt(val.split('-')[1]);
+                total += price;
+            }
+        }
+        document.getElementById('offline-total-cost').innerText = total;
+    }
+
+    function prepareOfflineOrderData() {
+        var selects = document.querySelectorAll('#offline-food-items-container select');
+        var orderData = {};
+        var total = 0;
+
+        for (var i = 0; i < selects.length; i++) {
+            var val = selects[i].value;
+            if (val) {
+                var parts = val.split('-');
+                var item = parts[0];
+                var price = parseInt(parts[1]);
+                orderData[item] = price;
+                total += price;
+            }
+        }
+
+        document.getElementById('offline_food_order_data').value = JSON.stringify(orderData);
+        document.getElementById('offline_total_cost_hidden').value = total;
+
+        return true; // allow form submission
+    }
+</script>
+
+
+{% endblock %}

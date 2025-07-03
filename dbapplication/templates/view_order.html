@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{{ url_for('submit_online_order') }}" method="POST">
+    <input type="text" name="customer_name" placeholder="Your Name" required><br>
+    <input type="email" name="email" placeholder="Your Email" required><br>
+    <input type="text" name="phone" placeholder="Phone"><br>
+    <textarea name="address" placeholder="Delivery Address" required></textarea><br>
+
+    <h4>Food Items:</h4>
+    <div id="food-items-container">
+        <select name="food_items[]" required>
+            <option value="">--Select Item--</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Burger">Burger</option>
+            <option value="Pasta">Pasta</option>
+            <option value="Sandwich">Sandwich</option>
+            <option value="Salad">Salad</option>
+        </select><br>
+    </div>
+    <button type="button" onclick="addFoodItem()">Add Another Item</button><br><br>
+
+    <input type="submit" value="Place Order">
+</form>
+
+<script>
+    function addFoodItem() {
+        var container = document.getElementById('food-items-container');
+        var newSelect = document.createElement('select');
+        newSelect.name = "food_items[]";
+        newSelect.required = true;
+
+        var options = `
+            <option value="">--Select Item--</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Burger">Burger</option>
+            <option value="Pasta">Pasta</option>
+            <option value="Sandwich">Sandwich</option>
+            <option value="Salad">Salad</option>
+        `;
+        newSelect.innerHTML = options;
+        container.appendChild(newSelect);
+        container.appendChild(document.createElement('br'));
+    }
+</script>
+
+{% endblock %}

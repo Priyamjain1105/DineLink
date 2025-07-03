@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 style="text-align: center; color: #d35400; font-size: 32px; margin-top: 20px;">
+    How would you like to place your order?
+</h2>
+
+<div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+">
+
+    <!-- Onsite Ordering -->
+    <a href="{{ url_for('food_order_offline_form') }}" style="
+        text-decoration: none;
+        background: #fff8e1;
+        color: #2e7d32;
+        padding: 30px 50px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        font-size: 24px;
+        font-weight: bold;
+        transition: transform 0.3s, background 0.3s;
+    " onmouseover="this.style.background='#fde0c5'; this.style.transform='scale(1.05)'"
+        onmouseout="this.style.background='#fff8e1'; this.style.transform='scale(1)'">
+        🍽️ Dining in Restaurant
+    </a>
+
+    <!-- Online Ordering -->
+    <a href="{{ url_for('food_order_online_form') }}" style="
+        text-decoration: none;
+        background: #f1f8e9;
+        color: #d35400;
+        padding: 30px 50px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        font-size: 24px;
+        font-weight: bold;
+        transition: transform 0.3s, background 0.3s;
+    " onmouseover="this.style.background='#e0f2f1'; this.style.transform='scale(1.05)'"
+        onmouseout="this.style.background='#f1f8e9'; this.style.transform='scale(1)'">
+        🏠 Ordering From Home
+    </a>
+
+</div>
+
+<p style="text-align: center; margin-top: 40px; font-size: 18px; color: #555;">
+    Please select your preferred option to explore our delicious menu!
+</p>
+
+{% endblock %}

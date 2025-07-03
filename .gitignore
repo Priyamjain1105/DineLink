@@ -1,0 +1,34 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+lib/
+include/
+bin/
+share/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.cache
+*.egg-info/
+.pytest_cache/
+htmlcov/
+
+# Flask-specific
+instance/
+.flaskenv
+
+# Environment variables
+.env
+
+# Database files (if using SQLite)
+*.db
+*.sqlite3
+
+# OS generated files
+.DS_Store
+Thumbs.db
