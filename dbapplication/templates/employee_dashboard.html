@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 style="text-align: center; color: #d35400; font-size: 32px; margin-top: 20px;">
+    Employee Dashboard
+</h2>
+
+<p style="text-align: center; color: #555; font-size: 18px; margin-top: 10px;">
+    Manage reservations, orders, and recipes
+</p>
+
+<div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 50px;
+">
+
+    <!-- See Table Reservations -->
+    <a href="{{ url_for('view_reservation') }}" style="
+        text-decoration: none;
+        background: #fff8e1;
+        color: #2e7d32;
+        padding: 30px 50px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        width: 260px;
+        transition: transform 0.3s, background 0.3s;
+    " onmouseover="this.style.background='#fde0c5'; this.style.transform='scale(1.05)'"
+        onmouseout="this.style.background='#fff8e1'; this.style.transform='scale(1)'">
+        🪑 See Table Reservations
+    </a>
+
+    <!-- See Orders -->
+    <a href="{{ url_for('view_order') }}" style="
+        text-decoration: none;
+        background: #f1f8e9;
+        color: #d35400;
+        padding: 30px 50px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        width: 260px;
+        transition: transform 0.3s, background 0.3s;
+    " onmouseover="this.style.background='#e0f2f1'; this.style.transform='scale(1.05)'"
+        onmouseout="this.style.background='#f1f8e9'; this.style.transform='scale(1)'">
+        📝 See Orders (Online/Offline)
+    </a>
+
+    <!-- View Recipes -->
+    <a href="{{ url_for('view_recipes') }}" style="
+        text-decoration: none;
+        background: #e8f5e9;
+        color: #2e7d32;
+        padding: 30px 50px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        width: 260px;
+        transition: transform 0.3s, background 0.3s;
+    " onmouseover="this.style.background='#c8e6c9'; this.style.transform='scale(1.05)'"
+        onmouseout="this.style.background='#e8f5e9'; this.style.transform='scale(1)'">
+        🍲 View Recipes
+    </a>
+
+</div>
+
+{% endblock %}

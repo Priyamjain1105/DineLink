@@ -107,9 +107,7 @@ def register_routes(app,db):
         return redirect(url_for('success_page'))
 
     
-    @app.route('/view_order')
-    def view_order():
-        return render_template('view_order.html')
+   
     
     @app.route('/table_reservation_form')
     def table_reservation_form():
@@ -139,11 +137,20 @@ def register_routes(app,db):
         
         return redirect(url_for('success_page'))
 
-    
+
+    @app.route('/employee_dashboard')
+    def employee_dashboard():
+        return render_template('employee_dashboard.html')
+
+    @app.route('/view_order')
+    def view_order():
+        return render_template('view_order.html')
+
     @app.route('/view_reservation')
     def view_reservation():
         return render_template('view_reservation.html')
     
-    @app.route('/cooking')
-    def cooking():
-        return render_template('cooking.html')
+    @app.route('/view_recipes')
+    def view_recipes():
+        return render_template('view_recipes.html')
+    

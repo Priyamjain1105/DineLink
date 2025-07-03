@@ -1,30 +1,52 @@
 {% extends 'base.html' %}
 {% block content %}
-<form action="{{ url_for('submit_online_order') }}" method="POST" onsubmit="return prepareOrderData()">
-    <input type="text" name="customer_name" placeholder="Your Name" required><br>
-    <input type="email" name="email" placeholder="Your Email" required><br>
-    <input type="text" name="phone" placeholder="Phone"><br>
-    <textarea name="address" placeholder="Delivery Address" required></textarea><br>
 
-    <h4>Food Items:</h4>
-    <div id="food-items-container">
-        <select onchange="updateTotal()" required>
-            <option value="">--Select Item--</option>
-            <option value="Pizza-300">Pizza - ₹300</option>
-            <option value="Burger-150">Burger - ₹150</option>
-            <option value="Pasta-200">Pasta - ₹200</option>
-            <option value="Sandwich-120">Sandwich - ₹120</option>
-            <option value="Salad-100">Salad - ₹100</option>
-        </select><br>
-    </div>
-    <button type="button" onclick="addFoodItem()">Add Another Item</button><br><br>
+<div
+    style="max-width: 600px; margin: 40px auto; padding: 30px; background: #f9f9f9; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
 
-    <h4>Total Cost: ₹<span id="total-cost">0</span></h4>
-    <input type="hidden" name="food_order_data" id="food_order_data">
-    <input type="hidden" name="total_cost" id="total_cost_hidden">
+    <h2 style="text-align: center; color: #333; margin-bottom: 25px;">Place Your Online Order</h2>
 
-    <input type="submit" value="Place Order">
-</form>
+    <form action="{{ url_for('submit_online_order') }}" method="POST" onsubmit="return prepareOrderData()">
+
+        <input type="text" name="customer_name" placeholder="Your Name" required
+            style="width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;">
+
+        <input type="email" name="email" placeholder="Your Email" required
+            style="width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;">
+
+        <input type="text" name="phone" placeholder="Phone"
+            style="width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;">
+
+        <textarea name="address" placeholder="Delivery Address" required
+            style="width: 100%; padding: 12px; margin: 8px 0 16px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; resize: vertical;"></textarea>
+
+        <h4 style="color: #555; margin-top: 20px;">Food Items:</h4>
+        <div id="food-items-container" style="margin-bottom: 15px;">
+            <select onchange="updateTotal()" required
+                style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;">
+                <option value="">--Select Item--</option>
+                <option value="Pizza-300">Pizza - ₹300</option>
+                <option value="Burger-150">Burger - ₹150</option>
+                <option value="Pasta-200">Pasta - ₹200</option>
+                <option value="Sandwich-120">Sandwich - ₹120</option>
+                <option value="Salad-100">Salad - ₹100</option>
+            </select>
+        </div>
+
+        <button type="button" onclick="addFoodItem()"
+            style="background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 15px; transition: background 0.3s;">
+            Add Another Item
+        </button>
+
+        <h4 style="margin-top: 25px; color: #333;">Total Cost: ₹<span id="total-cost">0</span></h4>
+
+        <input type="hidden" name="food_order_data" id="food_order_data">
+        <input type="hidden" name="total_cost" id="total_cost_hidden">
+
+        <input type="submit" value="Place Order"
+            style="width: 100%; margin-top: 20px; background: #007bff; color: white; padding: 14px; border: none; border-radius: 8px; cursor: pointer; font-size: 17px; transition: background 0.3s;">
+    </form>
+</div>
 
 <script>
     function addFoodItem() {
@@ -32,6 +54,7 @@
         var newSelect = document.createElement('select');
         newSelect.required = true;
         newSelect.setAttribute("onchange", "updateTotal()");
+        newSelect.style = "width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;";
         newSelect.innerHTML = `
             <option value="">--Select Item--</option>
             <option value="Pizza-300">Pizza - ₹300</option>
@@ -41,7 +64,6 @@
             <option value="Salad-100">Salad - ₹100</option>
         `;
         container.appendChild(newSelect);
-        container.appendChild(document.createElement('br'));
     }
 
     function updateTotal() {
@@ -73,11 +95,11 @@
             }
         }
 
-        // Store JSON string in hidden input
         document.getElementById('food_order_data').value = JSON.stringify(orderData);
         document.getElementById('total_cost_hidden').value = total;
 
-        return true; // allow form submission
+        return true;
     }
 </script>
+
 {% endblock %}
