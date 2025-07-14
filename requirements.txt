@@ -1,5 +1,3 @@
 flask-sqlalchemy
 flask-migrate
 pymysql
-jsonify
-datetime
