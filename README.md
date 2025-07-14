@@ -1,4 +1,4 @@
-# 🍽️ Restaurant Management System — Full-Stack on AWS 🚀
+<img width="1869" height="980" alt="Screenshot 2025-07-03 223041" src="https://github.com/user-attachments/assets/10909021-7940-45e4-b5ce-12801982f6e9" /># 🍽️ Restaurant Management System — Full-Stack on AWS 🚀
 
 ![AWS](https://img.shields.io/badge/AWS-EC2%20%7C%20RDS-orange)
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
@@ -40,11 +40,17 @@
 ---
 
 ## 🖼️ Screenshots
-> *(Add screenshots here once you have them!)*
 
 - 🖥️ Homepage
+  <img width="1869" height="980" alt="Screenshot 2025-07-03 223041" src="https://github.com/user-attachments/assets/33e2b81f-7285-4a16-a131-7e3067d450c7" />
+
 - 📅 Reservation Page
+  <img width="1912" height="966" alt="Screenshot 2025-07-03 162849" src="https://github.com/user-attachments/assets/d94ce8dc-0243-4c44-9706-b4c94db96b71" />
+
+  
 - 🥗 Order Management
+  <img width="1879" height="962" alt="Screenshot 2025-07-03 161748" src="https://github.com/user-attachments/assets/a16b65f7-07df-436c-95e6-de0ecdf0cf94" />
+
 
 ---
 
