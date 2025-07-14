@@ -187,3 +187,4 @@ def register_routes(app,db):
     @app.route('/staff_login_page')
     def staff_login_page():
         return render_template('staff_login.html')
+    
