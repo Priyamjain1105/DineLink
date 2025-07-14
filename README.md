@@ -1,5 +1,8 @@
-<img width="1869" height="980" alt="Screenshot 2025-07-03 223041" src="https://github.com/user-attachments/assets/10909021-7940-45e4-b5ce-12801982f6e9" />
+
 # 🍽️ Restaurant Management System — Full-Stack on AWS 🚀
+
+<img width="1869" height="980" alt="Screenshot 2025-07-03 223041" src="https://github.com/user-attachments/assets/10909021-7940-45e4-b5ce-12801982f6e9" />
+
 
 ![AWS](https://img.shields.io/badge/AWS-EC2%20%7C%20RDS-orange)
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
