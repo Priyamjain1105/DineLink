@@ -1,4 +1,69 @@
 {% extends 'base.html' %}
 {% block content %}
-<p>recepires</p>
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>All Reservations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>All Table Reservations</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Tables Booked</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+        {% for reservation in reservations %}
+        <tr>
+            <td>{{ reservation['id'] }}</td>
+            <td>{{ reservation['name'] }}</td>
+            <td>{{ reservation['email'] }}</td>
+            <td>{{ reservation['phone_no'] }}</td>
+            <td>{{ reservation['tables_booked'] }}</td>
+            <td>{{ reservation['reservation_date'] }}</td>
+            <td>{{ reservation['reservation_time'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+
+</html>
 {% endblock %}

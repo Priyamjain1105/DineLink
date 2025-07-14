@@ -1,4 +1,155 @@
 {% extends 'base.html' %}
 {% block content %}
-<p>recipes</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Veg Fast Food Recipes</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fff8f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: #ff7e5f;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .recipe-card:hover {
+            transform: scale(1.02);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .recipe-content {
+            padding: 1.5rem;
+        }
+
+        .recipe-content h2 {
+            margin-top: 0;
+            color: #ff7e5f;
+        }
+
+        .steps {
+            list-style: decimal inside;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Famous Veg Fast Food Recipes</h1>
+        <p>Easy, delicious, and purely vegetarian dishes you can try at home!</p>
+    </header>
+
+    <div class="container">
+
+        <div class="recipe-card">
+            <img src="https://i2.wp.com/vegecravings.com/wp-content/uploads/2016/10/pav-bhaji-recipe-step-by-step-instructions.jpg?w=2418&quality=65&strip=all&ssl=1"
+                alt="Pav Bhaji">
+            <div class="recipe-content">
+                <h2>Pav Bhaji</h2>
+                <ul class="steps">
+                    <li>Boil potatoes, peas, carrots. Mash well.</li>
+                    <li>Sauté onions & tomatoes with butter, ginger-garlic, pav bhaji masala.</li>
+                    <li>Add mashed veggies, cook well, adjust salt & spices.</li>
+                    <li>Toast pav buns with butter. Serve hot with lemon & onion.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="recipe-card">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.Df0V1RgHsnhrxZ1ZrDZQfwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="Masala Dosa">
+            <div class="recipe-content">
+                <h2>Masala Dosa</h2>
+                <ul class="steps">
+                    <li>Make dosa batter from rice & urad dal (fermented).</li>
+                    <li>Prepare potato filling with mustard seeds, curry leaves, turmeric & boiled potatoes.</li>
+                    <li>Pour batter on tawa, spread thin, drizzle oil, add potato masala.</li>
+                    <li>Fold & serve with coconut chutney & sambar.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="recipe-card">
+            <img src="https://static.vecteezy.com/system/resources/previews/015/933/458/large_2x/chole-bhature-is-a-north-indian-food-dish-a-combination-of-chana-masala-and-bhatura-or-puri-free-photo.jpg"
+                alt="Chole Bhature">
+            <div class="recipe-content">
+                <h2>Chole Bhature</h2>
+                <ul class="steps">
+                    <li>Soak & boil chickpeas. Prepare masala with onion, tomato, ginger-garlic & spices.</li>
+                    <li>Add chickpeas, simmer until thick.</li>
+                    <li>Make bhature dough (maida, yogurt, baking soda). Rest 2 hours.</li>
+                    <li>Roll & deep fry. Serve hot with chole, onions, pickle.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="recipe-card">
+            <img src="https://www.vegrecipesofindia.com/wp-content/uploads/2020/11/pizza-recipe.jpg" alt="Veg Pizza">
+            <div class="recipe-content">
+                <h2>Veg Pizza</h2>
+                <ul class="steps">
+                    <li>Spread pizza sauce on base. Top with veggies like capsicum, onion, tomato, olives.</li>
+                    <li>Generously add cheese.</li>
+                    <li>Bake at 220°C for 12-15 mins.</li>
+                    <li>Sprinkle oregano & chili flakes. Serve hot!</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="recipe-card">
+            <img src="https://thumbs.dreamstime.com/z/dahi-puri-dahi-papdi-spicy-indian-snack-called-dahi-puri-great-street-food-you-can-find-everywhere-beaches-158573857.jpg"
+                alt="Dahi Puri">
+            <div class="recipe-content">
+                <h2>Dahi Puri</h2>
+                <ul class="steps">
+                    <li>Crack puris, fill with boiled potatoes & chickpeas.</li>
+                    <li>Top with yogurt, green chutney, tamarind chutney.</li>
+                    <li>Sprinkle sev, coriander & chaat masala.</li>
+                    <li>Serve immediately for crunch!</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
 {% endblock %}

@@ -3,6 +3,7 @@ from model import OnlineOrder,OfflineOrder,TableReservation
 import json
 import datetime
 
+
 def register_routes(app,db):
 
     """@app.route('/',methods = ['GET','POST'])
@@ -144,13 +145,45 @@ def register_routes(app,db):
 
     @app.route('/view_order')
     def view_order():
-        return render_template('view_order.html')
+        online_orders = OnlineOrder.query.all()
+        online_orders_dict = [o.to_dict() for o in online_orders]
+
+        onsite_orders = OfflineOrder.query.all()
+        onsite_orders_dict = [o.to_dict() for o in onsite_orders]
+
+        return render_template(
+            "view_order.html",
+            orders={
+                'online_orders': online_orders_dict,
+                'onsite_orders': onsite_orders_dict
+            }
+        )
+
 
     @app.route('/view_reservation')
     def view_reservation():
-        return render_template('view_reservation.html')
+        reservations = TableReservation.query.all()
+        reservations_list = [r.to_dict() for r in reservations]
+
+        return render_template("view_reservation.html", reservations=reservations_list)
+        
     
     @app.route('/view_recipes')
     def view_recipes():
         return render_template('view_recipes.html')
     
+    # Staff login route
+    @app.route('/staff_login', methods=['GET', 'POST'])
+    def staff_login():
+        error = None
+        if request.method == 'POST':
+            password = request.form.get('password')
+            if password == 'secret123':
+                return redirect(url_for('employee_dashboard'))
+            else:
+                error = "Wrong password"
+        return render_template('staff_login.html', error=error)
+    
+    @app.route('/staff_login_page')
+    def staff_login_page():
+        return render_template('staff_login.html')

@@ -18,6 +18,42 @@
         <p style="font-size: 22px; margin-top: 10px;">Authentic Pure Veg Indian Cuisine</p>
     </div>
 </div>
+<div style="
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+">
+    <a href="{{ url_for('table_reservation_form') }}" style="
+        background-color: #d35400;
+        color: white;
+        padding: 18px 36px;
+        font-size: 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#e67e22'; this.style.transform='scale(1.05)';"
+        onmouseout="this.style.backgroundColor='#d35400'; this.style.transform='scale(1)';">
+        Reserve a Table
+    </a>
+
+    <a href="{{ url_for('food_orderOF') }}" style="
+        background-color: #27ae60;
+        color: white;
+        padding: 18px 36px;
+        font-size: 20px;
+        text-decoration: none;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#2ecc71'; this.style.transform='scale(1.05)';"
+        onmouseout="this.style.backgroundColor='#27ae60'; this.style.transform='scale(1)';">
+        Order Food
+    </a>
+</div>
+
 
 <!-- Featured Dishes -->
 <div style="margin-top: 50px;">
@@ -71,6 +107,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- Why Choose Us -->
 <div style="

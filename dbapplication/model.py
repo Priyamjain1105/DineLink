@@ -29,6 +29,7 @@ class TableReservation(db.Model):
             "reservation_date": self.reservation_date.isoformat(),
             "reservation_time": self.reservation_time.isoformat()
         }
+    
 class OnlineOrder(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     customer_name = db.Column(db.String(100))
