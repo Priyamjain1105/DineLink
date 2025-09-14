@@ -15,18 +15,7 @@
 ---
 
 ## 📝 Table of Contents
-- [✨ Features](#-features)
-- [🖼️ Screenshots](#-screenshots)
-- [🚀 Tech Stack](#-tech-stack)
-- [🧩 System Design](#-system-design)
-- [🔧 Steps to Run Locally](#-steps-to-run-locally)
-- [☁️ Deployment on AWS](#-deployment-on-aws)
-- [🗄️ Database Schema](#-database-schema)
-- [📚 Lessons Learned](#-lessons-learned)
-- [🙏 Acknowledgments](#-acknowledgments)
-- [🐙 Project Link](#-project-link)
-- [🚀 Connect with me](#-connect-with-me)
-
+<iframe width="560" height="315" src="https://www.google.com/search?q=https://www.youtube.com/embed/hZUwXvWPXJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 ---
 
 ## ✨ Features
